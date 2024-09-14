@@ -89,6 +89,12 @@ orgs.newOrg('eclipse-openj9') {
             "repository"
           ],
         },
+        orgs.newRepoWebhook('https://openj9-jenkins.osuosl.org/ghprbhook/') {
+          events+: [
+            "issue_comment",
+            "pull_request"
+          ],
+        },
       ],
       branch_protection_rules: [
         orgs.newBranchProtectionRule('v*-release') {
@@ -142,6 +148,12 @@ orgs.newOrg('eclipse-openj9') {
           content_type: "json",
           events+: [
             "push"
+          ],
+        },
+        orgs.newRepoWebhook('https://openj9-jenkins.osuosl.org/ghprbhook/') {
+          events+: [
+            "issue_comment",
+            "pull_request"
           ],
         },
       ],
@@ -247,6 +259,12 @@ orgs.newOrg('eclipse-openj9') {
       },
       webhooks: [
         orgs.newRepoWebhook('https://ci.eclipse.org/openj9/ghprbhook/') {
+          events+: [
+            "issue_comment",
+            "pull_request"
+          ],
+        },
+        orgs.newRepoWebhook('https://openj9-jenkins.osuosl.org/ghprbhook/') {
           events+: [
             "issue_comment",
             "pull_request"
