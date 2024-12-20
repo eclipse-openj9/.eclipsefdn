@@ -1,6 +1,6 @@
 local orgs = import 'vendor/otterdog-defaults/otterdog-defaults.libsonnet';
 
-orgs.newOrg('eclipse-openj9') {
+orgs.newOrg('technology.openj9', 'eclipse-openj9') {
   settings+: {
     description: "",
     name: "Eclipse OpenJ9™",
