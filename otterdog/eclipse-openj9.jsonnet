@@ -4,9 +4,6 @@ orgs.newOrg('technology.openj9', 'eclipse-openj9') {
   settings+: {
     description: "",
     name: "Eclipse OpenJ9™",
-    security_managers+: [
-      "technology-openj9-committers"
-    ],
     web_commit_signoff_required: false,
     workflows+: {
       default_workflow_permissions: "write",
