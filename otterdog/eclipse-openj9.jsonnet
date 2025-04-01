@@ -28,6 +28,8 @@ orgs.newOrg('technology.openj9', 'eclipse-openj9') {
     },
   ],
   _repositories+:: [
+    orgs.newRepo('.github') {
+    },
     orgs.newRepo('build-openj9') {
       allow_merge_commit: true,
       allow_update_branch: false,
@@ -94,12 +96,6 @@ orgs.newOrg('technology.openj9', 'eclipse-openj9') {
         },
       ],
       branch_protection_rules: [
-        orgs.newBranchProtectionRule('v*-release') {
-          required_approving_review_count: null,
-          requires_pull_request: false,
-          requires_status_checks: false,
-          requires_strict_status_checks: true,
-        },
         orgs.newBranchProtectionRule('master') {
           required_approving_review_count: null,
           requires_pull_request: false,
@@ -107,6 +103,26 @@ orgs.newOrg('technology.openj9', 'eclipse-openj9') {
           requires_strict_status_checks: true,
         },
         orgs.newBranchProtectionRule('jitaas') {
+          required_approving_review_count: null,
+          requires_pull_request: false,
+          requires_status_checks: false,
+          requires_strict_status_checks: true,
+        },
+        orgs.newBranchProtectionRule('v0.[1-4][0-9].[0-3]-release') {
+          lock_branch: true,
+          required_approving_review_count: null,
+          requires_pull_request: false,
+          requires_status_checks: false,
+          requires_strict_status_checks: true,
+        },
+        orgs.newBranchProtectionRule('v0.[8-9].0-release') {
+          lock_branch: true,
+          required_approving_review_count: null,
+          requires_pull_request: false,
+          requires_status_checks: false,
+          requires_strict_status_checks: true,
+        },
+        orgs.newBranchProtectionRule('v0.[5-9][0-9].[0-9]-release') {
           required_approving_review_count: null,
           requires_pull_request: false,
           requires_status_checks: false,
@@ -120,7 +136,7 @@ orgs.newOrg('technology.openj9', 'eclipse-openj9') {
       default_branch: "master",
       delete_branch_on_merge: false,
       dependabot_security_updates_enabled: true,
-      description: "Source repository for the Eclipse OpenJ9 user documentation, which should be viewed [online]https://www.eclipse.org/openj9/docs/",
+      description: "Source repository for the Eclipse OpenJ9 user documentation, which should be viewed https://www.eclipse.org/openj9/docs/",
       gh_pages_build_type: "legacy",
       gh_pages_source_branch: "gh-pages",
       gh_pages_source_path: "/",
@@ -295,10 +311,5 @@ orgs.newOrg('technology.openj9', 'eclipse-openj9') {
         },
       ],
     },
-  ],
-} + {
-  # snippet added due to 'https://github.com/EclipseFdn/otterdog-configs/blob/main/blueprints/add-dot-github-repo.yml'
-  _repositories+:: [
-    orgs.newRepo('.github')
   ],
 }
