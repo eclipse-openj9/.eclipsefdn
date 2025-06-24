@@ -136,7 +136,7 @@ orgs.newOrg('technology.openj9', 'eclipse-openj9') {
       default_branch: "master",
       delete_branch_on_merge: false,
       dependabot_security_updates_enabled: true,
-      description: "Source repository for the Eclipse OpenJ9 user documentation, which should be viewed https://www.eclipse.org/openj9/docs/",
+      description: "Source repository for the Eclipse OpenJ9 user documentation, which should be viewed [online]https://www.eclipse.org/openj9/docs/",
       gh_pages_build_type: "legacy",
       gh_pages_source_branch: "gh-pages",
       gh_pages_source_path: "/",
