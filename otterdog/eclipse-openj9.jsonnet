@@ -45,7 +45,6 @@ orgs.newOrg('technology.openj9', 'eclipse-openj9') {
     orgs.newRepo('openj9') {
       allow_merge_commit: true,
       allow_update_branch: false,
-      default_branch: "master",
       delete_branch_on_merge: false,
       dependabot_security_updates_enabled: true,
       description: "Eclipse OpenJ9: A Java Virtual Machine for OpenJDK that's optimized for small footprint, fast start-up, and high throughput.   Builds on Eclipse OMR (https://github.com/eclipse/omr) and combines with the Extensions for OpenJDK for OpenJ9 repo.",
